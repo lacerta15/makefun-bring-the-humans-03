@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #191419; }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #191419;
+        font-family: 'Inter', sans-serif;
+      }
+      #bg { position: absolute; inset: 0; background: #191419; }
+      #bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.035;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      }
+      .scene-host { position: absolute; inset: 0; }
+      #claim-wrap { position: absolute; inset: 0; }
+      #badge-overlay, #endcard-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1080px;
+        height: 1920px;
+      }
+      #code-layer {
+        position: absolute;
+        left: 210px;
+        top: 1232px;
+        width: 510px;
+        height: 78px;
+        display: flex;
+        align-items: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+        font-size: 62px;
+        color: #191419;
+        letter-spacing: 0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1080" data-height="1920">
+      <div id="bg" data-layout-ignore></div>
+
+      <div id="scene-hook" class="clip scene-host" data-composition-id="scene-hook" data-composition-src="compositions/hook.html" data-start="0" data-duration="3" data-track-index="1" data-width="1080" data-height="1920"></div>
+
+      <div id="scene-reveal" class="clip scene-host" data-composition-id="scene-reveal" data-composition-src="compositions/reveal.html" data-start="3" data-duration="3" data-track-index="1" data-width="1080" data-height="1920"></div>
+
+      <div id="scene-proof1" class="clip scene-host" data-composition-id="scene-proof1" data-composition-src="compositions/proof1.html" data-start="6" data-duration="2.75" data-track-index="1" data-width="1080" data-height="1920"></div>
+
+      <div id="scene-proof2" class="clip scene-host" data-composition-id="scene-proof2" data-composition-src="compositions/proof2.html" data-start="8.75" data-duration="2.25" data-track-index="1" data-width="1080" data-height="1920"></div>
+
+      <div id="scene-proof3" class="clip scene-host" data-composition-id="scene-proof3" data-composition-src="compositions/proof3.html" data-start="11" data-duration="1.5" data-track-index="1" data-width="1080" data-height="1920"></div>
+
+      <div id="claim-wrap">
+        <div id="scene-claim" class="clip scene-host" data-composition-id="scene-claim" data-composition-src="compositions/claim.html" data-start="12.5" data-duration="7.5" data-track-index="1" data-width="1080" data-height="1920"></div>
+      </div>
+
+      <img id="badge-overlay" class="clip" src="assets/brand/makefun-badge-9x16.png" data-start="0" data-duration="17.5" data-track-index="2" />
+
+      <video id="endcard-overlay" class="clip" src="assets/brand/makefun-card-9x16-transparent.webm" muted playsinline data-start="17.5" data-duration="2.5" data-track-index="2"></video>
+
+      <div id="code-layer" class="clip" data-start="18.567" data-duration="1.433" data-track-index="3">4qezyqsx</div>
+
+      <audio id="bgm" class="clip" src="assets/bgm/track.wav" data-start="0" data-duration="20" data-volume="0.9" data-fade-out="1.2"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // Manifest step: blur ~28px and desaturate the clip under the card, easing in over ~0.8s from where the card starts.
+      tl.fromTo(
+        "#claim-wrap",
+        { filter: "blur(0px) saturate(100%)" },
+        { filter: "blur(28px) saturate(0%)", duration: 0.8, ease: "power1.inOut" },
+        17.5
+      );
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
