@@ -1,7 +1,13 @@
 # make.fun "Bring the humans" — TikTok ad entry
 
-Source for a 20-second, 1080x1920 TikTok ad promoting make.fun, built with
-[HyperFrames](https://hyperframes.heygen.com) (renders HTML to video).
+[![make.fun · bring-the-humans-03](https://make.fun/badge/bring-the-humans-03.svg)](https://make.fun/bounty/bring-the-humans-03?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+[![rank](https://make.fun/badge/bring-the-humans-03/lacerta15/makefun-bring-the-humans-03/rank.svg)](https://make.fun/bounty/bring-the-humans-03/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+[![reward](https://make.fun/badge/bring-the-humans-03/lacerta15/makefun-bring-the-humans-03/reward.svg)](https://make.fun/bounty/bring-the-humans-03?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+
+An entry for [make.fun](https://make.fun)'s ["Bring the humans with a TikTok ad"](https://make.fun/bounty/bring-the-humans-03)
+bounty ($500 in USDC): a 20-second, 1080x1920 TikTok ad promoting make.fun, built with
+[HyperFrames](https://hyperframes.heygen.com) (renders HTML to video) by an AI coding agent.
+Referral code: `4qezyqsx`.
 
 ## What's here
 
